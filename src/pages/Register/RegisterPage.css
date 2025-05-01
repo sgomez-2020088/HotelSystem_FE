@@ -1,0 +1,100 @@
+
+    body {
+        display: flex;
+        flex-direction: column;
+        font-family: 'Arial', sans-serif;
+        background-color: #F0F0F0; 
+        color: #333333; 
+        margin: 0;
+        padding: 0;
+    }
+    
+    h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #003366; 
+        margin-bottom: 30px;
+    }
+    
+    form {
+        background-color: #FFFFFF; 
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 600px;
+
+        margin: 0 auto;
+    }
+    
+    form label {
+        display: block;
+        font-size: 1rem;
+        margin-bottom: 5px;
+        color: #333333; 
+    }
+    
+    form input {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        border: 1px solid #F0F0F0; 
+        border-radius: 4px;
+        font-size: 1rem;
+        color: #333333; 
+        background-color: #F0F0F0; 
+    }
+    
+    form input:focus {
+        outline: none;
+        border-color: #003366; 
+        box-shadow: 0 0 5px rgba(0, 51, 102, 0.5);
+    }
+    
+    form button {
+        background-color: #6aba8a; 
+        color: #FFFFFF; 
+        border: none;
+        padding: 12px 20px;
+        font-size: 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    form button:disabled {
+        background-color: #F0F0F0; 
+        cursor: not-allowed;
+    }
+    
+    form button:hover {
+        background-color: #508d68; 
+    }
+    
+    form span {
+        display: block;
+        font-size: 0.875rem;
+        color: red;
+        margin-bottom: 20px;
+    }
+    
+    input[type="radio"] {
+        margin-right: 10px;
+    }
+    
+    input[type="radio"]:checked {
+        background-color: #A8D5BA; 
+    }
+    
+    fieldset {
+        border: 1px solid #F0F0F0; 
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        background-color: #F7E9D7; 
+    }
+    
+    legend {
+        font-size: 1.2rem;
+        color: #003366; 
+    }
+    
