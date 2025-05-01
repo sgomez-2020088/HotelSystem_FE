@@ -1,0 +1,69 @@
+.nav {
+    background-color: #003366; 
+    padding: 1.5rem;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    top: 0;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.btn{
+    background-color: #6aba8a; 
+    color: #FFFFFF; 
+    border: none;
+    padding: 0.8rem 1.1rem;
+    font-size: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    margin-left: 2rem;
+    transition: 0.3s ease-out;
+}
+
+.btn:hover{
+    background-color: #508d68; 
+    transition: 0.3s ease-in-out;
+}
+
+.welcome {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    height: 48rem;
+    background-color: #f0f0f0; 
+}
+
+.welcome h1 {
+    font-size: 7rem;
+    color: #003366; 
+    margin-left: 2rem;
+}
+
+.img{
+    background-image: url('https://static.barcelo.com/content/dam/bhg/master/es/hoteles/guatemala/guatemala-city/barcelo-guatemala-city/main-photos/hotel/BGUA_VIEW_01.jpg');
+    height: 29rem;
+    width: 50rem;
+    display: flex;
+    margin-left: 15rem;
+    align-items: center;
+    justify-content: right;
+    background-size: cover;
+    animation: animate 15s infinite;
+    border-radius: 2rem;
+}
+
+@keyframes animate {
+    33%{
+        background-image: url('https://amatique-bay-resort-marina-puerto-barrios.hotelmix.es/data/Photos/OriginalPhoto/12778/1277858/1277858881/Amatique-Bay-Hotel-Puerto-Barrios-Exterior.JPEG');
+        background-size: cover;
+    }
+    66%{
+        background-image: url('https://www.guatemala.com/fotos/2024/11/Hoteles-todo-incluido-en-Guatemala-885x500.jpg');
+        background-size: cover;
+    }
+    100%{
+        background-image: url('https://static.barcelo.com/content/dam/bhg/master/es/hoteles/guatemala/guatemala-city/barcelo-guatemala-city/main-photos/hotel/BGUA_VIEW_01.jpg');
+        background-size: cover;
+    }
+}
+
