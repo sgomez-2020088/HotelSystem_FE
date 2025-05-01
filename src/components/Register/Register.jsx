@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { Input } from '../Input.jsx'
+import { useRegister } from '../../shared/hooks/useRegister'
 import { Link } from 'react-router-dom'
+
 
 export const Register = () => {
 
@@ -22,8 +24,16 @@ export const Register = () => {
         confirmPassword: undefined
     })
 
+    const disable = formValidation.name === "" && formValidation.surname === "" &&
+                    formValidation.email === "" && formValidation.password === "" && 
+                    formValidation.username === "" && formValidation.phone === "" && 
+                    formValidation.confirmPassword === ""
+
+    const {register,loading,error,setError} = useRegister()
+
     const handleSubmit = (event) => {
         event.preventDefault()
+        register(name, surname, email, password, username, phone)
     }
 
     const handleChangeName = (event)=>{
@@ -36,7 +46,7 @@ export const Register = () => {
         const value = event.target.value
         setFormValidation({...formValidation, surname: value.length>0?'':'Please field this field'})
         setSurname(value)
-        console.log(value)
+
     }
 
     const handleChangeEmail = (event)=>{
@@ -44,21 +54,20 @@ export const Register = () => {
         const regex = /\S+@\S+\.\S+/
         setFormValidation({...formValidation, email: regex.test(value)?'':'Write a valid email'})
         setEmail(value)
-        console.log(value)
+
     }
 
     const handleChangeUsername = (event)=>{
         const value = event.target.value
         setFormValidation({...formValidation, username: value.length>0?'':'Please field this field'})
         setUsername(value)
-        console.log(value)
     }
 
     const handleChangePhone = (event)=>{
         const value = event.target.value
         setFormValidation({...formValidation, phone: value.length>=8?'':'Please field this field'})
         setPhone(value)
-        console.log(value)
+
     }
 
     const handleChangePassword = (event)=>{
@@ -66,14 +75,13 @@ export const Register = () => {
         const regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/
         setFormValidation({...formValidation, password: regex.test(value)?'':'Password must be at least 8 characters long, contain at least one uppercase letter, one number, and one special character.'})
         setPassword(value)
-        .log(value)
     }
 
     const handleChangeConfirmPassword = (event)=>{ 
         const value = event.target.value
         setFormValidation({...formValidation, confirmPassword: value === password?'':'Passwords do not match'})
         setConfirmPassword(value)
-        console.log(value)
+
     }
     return (
         <>
@@ -101,9 +109,12 @@ export const Register = () => {
             <Input field='confirmPassword' label='Confirm Password' value={confirmPassword} type='password' handleValueChange={handleChangeConfirmPassword}/>
             <span>{formValidation.confirmPassword}</span>
 
-            <Link to='/'>
-                <button>Submit</button>
-            </Link>
+
+
+            <button  type="submit" disabled={!disable}>
+                {loading ? 'Registrando...' : 'Registrar'}
+            </button>
+
         </form>
         </>
     )
