@@ -18,3 +18,15 @@ export const registerUser = async(user) =>{
         }
     }
 }
+
+export const loginUser = async(user) =>{
+    try {
+        let response =  await apiClient.post('/v1/auth/login',user)
+        return response.data
+    } catch (err) {
+        return{
+            error: true,
+            err
+        }
+    }
+}
