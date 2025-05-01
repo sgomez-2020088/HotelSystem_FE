@@ -1,0 +1,105 @@
+import React, { useState } from 'react'
+import { Input } from '../Input.jsx'
+import { Link } from 'react-router-dom'
+
+export const Register = () => {
+
+    const [name, setName] = useState("")
+    const [surname, setSurname] = useState("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const [username, setUsername] = useState("")
+    const [phone, setPhone] = useState("")
+    const [confirmPassword, setConfirmPassword] = useState("")
+
+    const [formValidation, setFormValidation] = useState({
+        name: undefined,
+        surname: undefined,
+        email: undefined,
+        password: undefined,
+        username: undefined,
+        phone: undefined,
+        confirmPassword: undefined
+    })
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+    }
+
+    const handleChangeName = (event)=>{
+        const value = event.target.value
+        setFormValidation({...formValidation, name: value.length>0?'':'Please field this field'})
+        setName(value)
+    }
+    
+    const handleChangeSurname = (event)=>{
+        const value = event.target.value
+        setFormValidation({...formValidation, surname: value.length>0?'':'Please field this field'})
+        setSurname(value)
+        console.log(value)
+    }
+
+    const handleChangeEmail = (event)=>{
+        const value = event.target.value
+        const regex = /\S+@\S+\.\S+/
+        setFormValidation({...formValidation, email: regex.test(value)?'':'Write a valid email'})
+        setEmail(value)
+        console.log(value)
+    }
+
+    const handleChangeUsername = (event)=>{
+        const value = event.target.value
+        setFormValidation({...formValidation, username: value.length>0?'':'Please field this field'})
+        setUsername(value)
+        console.log(value)
+    }
+
+    const handleChangePhone = (event)=>{
+        const value = event.target.value
+        setFormValidation({...formValidation, phone: value.length>=8?'':'Please field this field'})
+        setPhone(value)
+        console.log(value)
+    }
+
+    const handleChangePassword = (event)=>{
+        const value = event.target.value
+        setPassword(value)
+        console.log(value)
+    }
+
+    const handleChangeConfirmPassword = (event)=>{ 
+        const value = event.target.value
+        setConfirmPassword(value)
+        console.log(value)
+    }
+    return (
+        <>
+        <h1>Register</h1>
+        <form onSubmit={handleSubmit}>
+            
+            <Input field='name' label='Name' value={name} type='text' handleValueChange={handleChangeName}/>
+            <span>{formValidation.name}</span>
+
+            <Input field='surname' label='Surname' value={surname} type='text' handleValueChange={handleChangeSurname}/>
+            <span>{formValidation.surname}</span>
+            
+            <Input field='email' label='Email' value={email} type='email' handleValueChange={handleChangeEmail}/>
+            <span>{formValidation.email}</span>
+            
+            <Input field='username' label='Username' value={username} type='text' handleValueChange={handleChangeUsername}/>
+            <span>{formValidation.username}</span>
+
+            <Input field='phone' label='Phone' value={phone} type='text' handleValueChange={handleChangePhone}/>
+            <span>{formValidation.phone}</span>
+
+            <Input field='password' label='Password' value={password} type='password' handleValueChange={handleChangePassword}/>
+            
+            <Input field='confirmPassword' label='Confirm Password' value={confirmPassword} type='password' handleValueChange={handleChangeConfirmPassword}/>
+            
+            <Link to='/'>
+                <button>Submit</button>
+            </Link>
+        </form>
+        </>
+    )
+}
