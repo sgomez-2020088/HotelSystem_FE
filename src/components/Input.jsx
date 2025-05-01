@@ -4,7 +4,7 @@ export const Input = ({label, value,handleValueChange, type,field, className}) =
     return (
         <>
         <div>
-            <span>{label}</span>
+            <label>{label}</label>
         </div>
         <input className={className} type={type} value={value} onChange={handleValueChange}/>
         </>
