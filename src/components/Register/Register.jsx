@@ -63,12 +63,15 @@ export const Register = () => {
 
     const handleChangePassword = (event)=>{
         const value = event.target.value
+        const regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/
+        setFormValidation({...formValidation, password: regex.test(value)?'':'Password must be at least 8 characters long, contain at least one uppercase letter, one number, and one special character.'})
         setPassword(value)
-        console.log(value)
+        .log(value)
     }
 
     const handleChangeConfirmPassword = (event)=>{ 
         const value = event.target.value
+        setFormValidation({...formValidation, confirmPassword: value === password?'':'Passwords do not match'})
         setConfirmPassword(value)
         console.log(value)
     }
@@ -93,9 +96,11 @@ export const Register = () => {
             <span>{formValidation.phone}</span>
 
             <Input field='password' label='Password' value={password} type='password' handleValueChange={handleChangePassword}/>
-            
+            <span>{formValidation.password}</span>
+
             <Input field='confirmPassword' label='Confirm Password' value={confirmPassword} type='password' handleValueChange={handleChangeConfirmPassword}/>
-            
+            <span>{formValidation.confirmPassword}</span>
+
             <Link to='/'>
                 <button>Submit</button>
             </Link>
