@@ -87,7 +87,8 @@ export const Register = () => {
         <>
         <h1>Register</h1>
         <form onSubmit={handleSubmit}>
-            
+            <p>Already have an account?<Link to="/login"> Login</Link></p>
+
             <Input field='name' label='Name' value={name} type='text' handleValueChange={handleChangeName}/>
             <span>{formValidation.name}</span>
 
@@ -108,7 +109,6 @@ export const Register = () => {
 
             <Input field='confirmPassword' label='Confirm Password' value={confirmPassword} type='password' handleValueChange={handleChangeConfirmPassword}/>
             <span>{formValidation.confirmPassword}</span>
-
 
 
             <button  type="submit" disabled={!disable}>
