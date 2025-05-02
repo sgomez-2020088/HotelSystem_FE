@@ -22,11 +22,19 @@ export const useRegister = () => {
         if (response.error) {
             setError(true)
             
-            if(response?.err?.response?.data?.errors){
-                let arrayErrors = response?.err?.response?.data?.errors
+            if(response.err.response.data.errors){
+                let arrayErrors = response.err.response.data.errors
                 for (const error of arrayErrors) {
                     return toast.error(error.msg)
                 }
+            }
+            
+            console.log(response?.err?.response?.data?.errors)
+            if(email ===response?.err?.response?.data.err.keyValue.email){
+                return toast.error('El email ya se encuentra registrado')
+            } 
+            else if(username ===response?.err?.response?.data.err.keyValue.username){
+                return toast.error('Este nombre de usuario ya se encuentra registrado')
             }
             
             return toast.error(
@@ -36,6 +44,7 @@ export const useRegister = () => {
             )
         }
         setError(false)
+        console.log(response?.err?.data?.msg )
         return toast.success('Usuario registrado correctamente')
     }
     return {
