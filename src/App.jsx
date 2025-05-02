@@ -2,10 +2,10 @@ import { BrowserRouter, useRoutes } from "react-router-dom"
 import { routes } from "./routes"
 import { Toaster } from "react-hot-toast"
 
+
 function App() {
 
   const elements = useRoutes(routes)
-    
   return (
     <>
       {elements}
