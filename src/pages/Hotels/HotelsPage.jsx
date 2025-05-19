@@ -16,9 +16,9 @@ export const HotelsPage = () => {
       <div className="main-layout">
         <SideBar className="sidebar">
           <ul>
-            <li><Link to="/hoteles/agregar" className="sidebar-link">Agregar</Link></li>
-            <li><Link to="/hoteles/editar" className="sidebar-link">Editar</Link></li>
-            <li><Link to="/hoteles/eliminar" className="sidebar-link">Eliminar</Link></li>
+            <li><Link className="sidebar-link">Agregar</Link></li>
+            <li><Link className="sidebar-link">Editar</Link></li>
+            <li><Link className="sidebar-link">Eliminar</Link></li>
           </ul>
         </SideBar>
 
