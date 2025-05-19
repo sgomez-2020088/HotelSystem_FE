@@ -1,12 +1,30 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { SideBar } from '../../components/SideBar/SideBar'
 import { NavBar } from '../../components/Navbar/NavBar'
 import { HotelContent } from '../../components/HotelContent'
 import { Link } from 'react-router-dom'
 
 import './HotelPageCss.css'
+import { useHotels } from '../../shared/hooks/useHotels'
+import { ScaleLoader } from 'react-spinners'
 
 export const HotelsPage = () => {
+
+  const {hotels, getHotels,isFetching} =useHotels()
+
+
+  useEffect(() => {
+    getHotels()
+  }, [])
+  
+  if(isFetching){
+    return(
+      <div>
+        <ScaleLoader color="#A8D5BA" height={99} margin={2} radius={2} width={4}/>
+      </div>
+    )
+  }
+  
   return (
     <>
       <NavBar className="navbar">
