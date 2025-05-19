@@ -17,13 +17,7 @@ export const HotelsPage = () => {
     getHotels()
   }, [])
   
-  if(isFetching){
-    return(
-      <div>
-        <ScaleLoader color="#A8D5BA" height={99} margin={2} radius={2} width={4}/>
-      </div>
-    )
-  }
+  
   
   return (
     <>
