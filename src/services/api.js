@@ -30,3 +30,25 @@ export const loginUser = async(user) =>{
         }
     }
 }
+
+export const getHotelsRequest = async() =>{
+    try {
+        return await apiClient.get('/v1/hotel/getAll')
+    } catch (err) {
+        return{
+            error:true,
+            err
+        }
+    }
+}
+
+export const addNewHotelRequest = async(hotel)=>{
+    try {
+        return await apiClient.post('/v1/hotel/add', hotel)
+    } catch (err) {
+        return{
+            error:true,
+            err
+        }
+    }
+}
