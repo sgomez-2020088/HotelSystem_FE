@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Input } from '../Input'
 
 import { Link, useNavigate } from 'react-router-dom'
@@ -18,12 +18,12 @@ export const Login = () => {
     const {login, setError, loading, error} =useLogin()
     
 
+   
+
     const handleSubmit = (event)=>{
         event.preventDefault()
-
         login(userInformation, password)
-        
-        
+
     }
 
     const handleChangeUserInformation = (event)=>{

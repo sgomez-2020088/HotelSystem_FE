@@ -6,6 +6,7 @@ import toast from 'react-hot-toast'
 export const useRegister = () => {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(false)
+    
 
     const register = async(name, surname, email, password, username, phone) => {
         setLoading(true)

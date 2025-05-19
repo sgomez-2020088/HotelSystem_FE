@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { loginUser } from '../../services/api'
 import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
@@ -7,6 +7,7 @@ export const useLogin = () => {
         
         const [loading, setLoading] = useState(false)
         const [error, setError] = useState(false)
+        
         const navigate = useNavigate();
 
         const login = async(userInformation, password) => {
@@ -38,13 +39,15 @@ export const useLogin = () => {
             }
             
             setError(false)         
-            navigate('/')
+            navigate('/hotels')
             return toast.success('Login exitoso')
+            
         }
     return {
         login,
         loading,
         error,
-        setError
+        setError,
+        setLoading,
     }
 }
