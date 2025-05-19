@@ -37,7 +37,9 @@ export const useLogin = () => {
                     'Error general al intentar registrar al usuario. Intenta de nuevo'
                 )
             }
-            
+            console.log(response.token)
+
+            localStorage.setItem('token',response.token)
             setError(false)         
             navigate('/hotels')
             return toast.success('Login exitoso')
