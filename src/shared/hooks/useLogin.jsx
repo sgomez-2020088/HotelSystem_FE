@@ -41,7 +41,7 @@ export const useLogin = () => {
 
             localStorage.setItem('token',response.token)
             setError(false)         
-            navigate('/hotels')
+            navigate('/hotels/Hotels')
             return toast.success('Login exitoso')
             
         }

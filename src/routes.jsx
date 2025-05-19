@@ -1,3 +1,4 @@
+import { Hotels } from './components/Hotel/Hotels.jsx'
 import { NewHotel } from './components/NewHotel/NewHotel.jsx'
 import { HotelsPage } from './pages/Hotels/HotelsPage.jsx'
 import { LoginPage } from './pages/Login/LoginPage.jsx'
@@ -15,6 +16,7 @@ export const routes = [
         element:<HotelsPage/>,
         children:[
             {path:'addHotel', element:<NewHotel/>},
+            {path:'Hotels', element: <Hotels/>}
         ]
     },
     {path:'*', element:<NotFoundPage/>}
