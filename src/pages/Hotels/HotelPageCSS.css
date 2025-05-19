@@ -1,0 +1,49 @@
+/* Barra superior fija */
+.navbar h1 {
+  color: #f9f9f9;
+}
+/* Barra superior fija */
+.navbar {
+  height: 60px;
+  background-color: #003366; /* azul oscuro */
+  color: #FFFFFF; /* blanco */
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Contenedor principal con sidebar y contenido */
+.main-layout {
+  display: flex;
+  height: calc(100vh - 60px);
+  background-color: #FDF0F0; /* rosa muy claro */
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 15px;
+}
+
+.sidebar-link {
+  display: block;
+  padding: 10px 15px;
+  background-color: #003366; /* azul oscuro */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-link:hover {
+  background-color: #A8D5BA; /* verde claro */
+  color: #003366;
+}
