@@ -2,24 +2,25 @@
 .navbar h1 {
   color: #f9f9f9;
 }
-/* Barra superior fija */
+
 .navbar {
   height: 60px;
   background-color: #003366; /* azul oscuro */
-  color: #FFFFFF; /* blanco */
+  color: #FFFFFF;
   display: flex;
   align-items: center;
+  justify-content: center; /* centra horizontalmente */
   padding: 0 20px;
   font-weight: bold;
   font-size: 1.2rem;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-/* Contenedor principal con sidebar y contenido */
+
 .main-layout {
   display: flex;
   height: calc(100vh - 60px);
-  background-color: #FDF0F0; /* rosa muy claro */
+  background-color: #FDF0F0; 
 }
 
 .sidebar ul {
@@ -35,7 +36,7 @@
 .sidebar-link {
   display: block;
   padding: 10px 15px;
-  background-color: #003366; /* azul oscuro */
+  background-color: #003366;
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -44,6 +45,6 @@
 }
 
 .sidebar-link:hover {
-  background-color: #A8D5BA; /* verde claro */
+  background-color: #A8D5BA;
   color: #003366;
 }
