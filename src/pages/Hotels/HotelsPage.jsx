@@ -1,24 +1,23 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { SideBar } from '../../components/SideBar/SideBar'
 import { NavBar } from '../../components/Navbar/NavBar'
 import { HotelContent } from '../../components/HotelContent'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import './HotelPageCss.css'
+
 import { useHotels } from '../../shared/hooks/useHotels'
-import { ScaleLoader } from 'react-spinners'
+
 
 export const HotelsPage = () => {
 
   const {hotels, getHotels,isFetching} =useHotels()
 
 
-  useEffect(() => {
-    getHotels()
-  }, [])
-  
-  
-  
+  let ref = useRef()
+
+  let navigate = useNavigate()
+
   return (
     <>
       <NavBar className="navbar">
@@ -28,13 +27,14 @@ export const HotelsPage = () => {
       <div className="main-layout">
         <SideBar className="sidebar">
           <ul>
-            <li><Link className="sidebar-link">Agregar</Link></li>
-            <li><Link className="sidebar-link">Editar</Link></li>
-            <li><Link className="sidebar-link">Eliminar</Link></li>
+            <li onClick={()=>{navigate('/hotels/addHotel')}}><Link  ref={ref}className="sidebar-link">Agregar</Link></li>
+             <li onClick={()=>{navigate('/hotels/Hotels')}}><Link  ref={ref} className="sidebar-link">Ver hoteles</Link></li>
+            <li>< Link  ref={ref} className="sidebar-link">Editar</Link></li>
+            <li><Link ref={ref} className="sidebar-link">Eliminar</Link></li>
           </ul>
         </SideBar>
 
-        <HotelContent className="content"/>
+        <HotelContent className="content" hotels={hotels} getHotels={getHotels}/>
       </div>
     </>
   )
