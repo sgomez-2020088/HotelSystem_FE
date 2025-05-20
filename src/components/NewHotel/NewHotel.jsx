@@ -40,21 +40,17 @@ export const NewHotel = () => {
     setAmenities(value)
   }
   return (
-    <div className="container">
-      <h1>NewHotel</h1>
-        <form onSubmit={handleSubmit}>
-          <p>Guarda tu nuevo hotel</p>
-            <Input field='name' label='Name' type="text" value={name} handleValueChange={handleChangeName}/>
-.
-            <Input field='address' label='Address'type="text" value={address} handleValueChange={handleChangeAdrees}/>
+  <div className="form-wrapper">
+    <form className='form-container' onSubmit={handleSubmit}>
+      <h1>Nuevo hotel</h1>
+      <p>Guarda tu nuevo hotel</p>
+      <Input field='name' label='Name' type="text" value={name} handleValueChange={handleChangeName}/>
+      <Input field='address' label='Address'type="text" value={address} handleValueChange={handleChangeAdrees}/>
+      <Input field='category' label='Category' type="text" value={category} handleValueChange={handleChangeCategory}/>
+      <Input field='amenities' label='Amenities' type="text" value={amenities} handleValueChange={handleChangeAmenities}/>
+      <button>Guardar</button>
+    </form>
+  </div>
+)
 
-            <Input field='category' label='Category' type="text" value={category} handleValueChange={handleChangeCategory}/>
-
-            <Input field='amenities' label='Amenities' type="text" value={amenities} handleValueChange={handleChangeAmenities}/>
-
-            <button >Guardar</button>
-        </form>
-    
-    </div>
-  )
 }
