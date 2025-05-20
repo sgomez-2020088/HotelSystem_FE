@@ -62,3 +62,14 @@ export const addNewHotelRequest = async(hotel)=>{
         }
     }
 }
+
+export const updateHotelRequest = async(hotel)=>{
+    try {
+        return await apiClient.put('/v1/hotel/update',hotel)
+    } catch (error) {
+        return{
+            error:true,
+            err
+        }
+    }
+}
