@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useHotels } from '../../shared/hooks/useHotels'
 import {CardHotel} from '../Hotel/CardHotel'
-import { useOutletContext } from 'react-router-dom'
 import { ScaleLoader } from 'react-spinners'
+import './Hotels.css'
 
 export const Hotels = () => {
 
@@ -20,11 +20,11 @@ useEffect(() => {
       </div>
     )
   }
-
+  console.log(hotels)
   return (
-    <div>
+    <div className='hotels-container'>
       {
-        hotels.map((hotel)=>(<CardHotel key={hotel._id} name={hotel.name} address={hotel.address} category={hotel.category} amenities={hotel.amenities}/>))
+        hotels.map((hotel)=>(<CardHotel key={hotel._id} name={hotel.name} address={hotel.address} category={hotel.category} amenities={hotel.amenities} image={hotel.hotelImages}/>))
       }
       
     </div>
