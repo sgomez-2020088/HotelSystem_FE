@@ -17,3 +17,26 @@
   box-shadow: 0 0 60px rgba(0,0,0,0.1);
 }
 
+select {
+  width: 525px;
+  padding: 8px 12px;
+  margin-top: 4px;
+  margin-bottom: 16px;
+  font-size: 1rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  background-color: #f9fafb;
+  color: #1e293b; 
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  appearance: none; 
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px 16px;
+}
+
+select:focus {
+  border-color: #3b82f6; /* azul más fuerte al enfocar */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+  outline: none;
+}
