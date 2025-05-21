@@ -9,13 +9,12 @@ export const useAddHotel = () => {
             name,
             address,
             category,
-            amenities
+            amenities,
         }
         const response = await addNewHotelRequest(hotel)
         if(response.error){
-            return toast.error(
-                response?.err?.response?.message ||
-                'Error al crear el hotel'
+            return console.error(
+                response?.err?.response
             )
         }
         return toast.success('Hotel creado')
