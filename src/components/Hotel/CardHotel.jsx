@@ -1,7 +1,8 @@
 import React from 'react'
 
 import './CardHotel.css'
-export const CardHotel = ({name, address, category,amenities, image}) => {
+
+export const CardHotel = ({name, address, category,amenities, image, handleClick, handleClick2}) => {
 
   let imageSrc = ''
    if (image && image.data) {
@@ -22,6 +23,8 @@ export const CardHotel = ({name, address, category,amenities, image}) => {
       ) : (
         <p>No hay imagen</p>
       )}
+      <button onClick={handleClick}>Actualizar</button>
+      <button onClick={handleClick2}>Eliminar</button>
     </div>
   )
 }
