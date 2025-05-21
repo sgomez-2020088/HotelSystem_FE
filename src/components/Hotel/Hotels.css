@@ -1,0 +1,33 @@
+.hotels-container {
+  margin-left: 180px;  /* Para no chocar con el sidebar */
+  padding: 20px;
+  background-color: #f9fafb; /* Fondo uniforme */
+  min-height: 100vh;   /* Que tome toda la altura visible */
+  box-sizing: border-box;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+/* Cada card ocupa 1/3 menos el gap */
+.hotels-container > * {
+  flex: 1 1 calc(33.333% - 20px);
+  max-width: calc(33.333% - 20px);
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .hotels-container > * {
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .hotels-container > * {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
