@@ -52,6 +52,17 @@ export const getHotelsRequest = async() =>{
     }
 }
 
+export const getHotelByIdRequest = async(id) =>{
+    try {
+        return await apiClient.get(`/v1/hotel/getOne/${id}`)
+    } catch (err) {
+        return{
+            error:true,
+            err
+        }
+    }
+}
+
 export const addNewHotelRequest = async(hotel)=>{
     try {
         return await apiClient.post('/v1/hotel/add', hotel)
@@ -66,7 +77,18 @@ export const addNewHotelRequest = async(hotel)=>{
 export const updateHotelRequest = async(hotel)=>{
     try {
         return await apiClient.put('/v1/hotel/update',hotel)
-    } catch (error) {
+    } catch (err) {
+        return{
+            error:true,
+            err
+        }
+    }
+}
+
+export const deleteHotelRequest = async(id)=>{
+    try {
+        return await apiClient.delete(`/v1/hotel/delete/${id}`)
+    } catch (err) {
         return{
             error:true,
             err
