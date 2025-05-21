@@ -1,9 +1,11 @@
 import React from 'react'
 import { updateHotelRequest } from '../../services/api'
+import toast from 'react-hot-toast'
 
 export const useUpdateHotel = () => {
-    const updateHotel = async(name,address,category,amenities)=>{
+    const updateHotel = async(id,name,address,category,amenities)=>{
         const hotel ={
+            id,
             name,
             address,
             category,

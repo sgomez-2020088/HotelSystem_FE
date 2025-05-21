@@ -13,8 +13,9 @@ export const useAddHotel = () => {
         }
         const response = await addNewHotelRequest(hotel)
         if(response.error){
-            return console.error(
-                response?.err?.response
+            return toast.error(
+                response?.err?.response?.message ||
+                'Error al crear el hotel'
             )
         }
         return toast.success('Hotel creado')
