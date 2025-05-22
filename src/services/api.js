@@ -17,6 +17,7 @@ apiClient.interceptors.request.use(
     }
     
 )
+
 export const registerUser = async(user) =>{
     try {
         return await apiClient.post('/v1/auth/register',user)
@@ -92,6 +93,17 @@ export const deleteHotelRequest = async(id)=>{
         return{
             error:true,
             err
+        }
+    }
+}
+
+export const getHotelRoomsRequest = async(id)=>{
+    try {
+        return await apiClient.get(`/v1/hotelRoom/${id}/rooms`)
+    } catch (err) {
+        return{
+        error: true,
+        err
         }
     }
 }
