@@ -1,0 +1,73 @@
+    .rooms-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #F0F0F0; /* fondo claro */
+
+    margin-left: 12rem; 
+
+    }
+
+    .card-room {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+    border-left: 6px solid #A8D5BA;
+    }
+
+    .card-room:hover {
+    transform: translateY(-5px);
+    }
+
+    .card-room-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #003366;
+    }
+
+    .card-room-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    }
+
+    .room-type {
+    background-color: #A8D5BA;
+    color: #003366;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    }
+
+    .room-description {
+    color: #333333;
+    margin: 12px 0;
+    font-size: 0.95rem;
+    }
+
+    .card-room-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #003366;
+    font-weight: 600;
+    font-size: 0.95rem;
+    }
+
+    .room-price {
+    color: #003366;
+    }
+
+    .room-hotel {
+    color: #F7E9D7;
+    background-color: #003366;
+    padding: 4px 8px;
+    border-radius: 5px;
+    }
