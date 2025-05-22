@@ -9,6 +9,7 @@ import { UpdateHotel } from './components/updateHotel/updateHotel.jsx'
 import { DeleteHotel } from './components/DeleteHotel/DeleteHoteL.jsx'
 import { RoomsPage } from './pages/Rooms/RoomsPage.jsx'
 import { Rooms } from './components/Rooms/Rooms.jsx'
+import { AddRoom } from './components/AddRoom/AddRoom.jsx'
 
 export const routes = [
     {path:'/',element:<WelcomePage/>},
@@ -31,7 +32,7 @@ export const routes = [
         path:'/rooms',
         element: <RoomsPage/>,
         children:[
-            {path:'addRoom', element:<NewHotel/>},
+            {path:'addRoom/:id', element:<AddRoom/>},
             {path:'rooms/:id', element: <Rooms/>},
         ]
     },
