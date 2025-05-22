@@ -7,11 +7,14 @@ import { RegisterPage } from './pages/Register/RegisterPage.jsx'
 import { WelcomePage } from './pages/WelcomePage.jsx'
 import { UpdateHotel } from './components/updateHotel/updateHotel.jsx'
 import { DeleteHotel } from './components/DeleteHotel/DeleteHoteL.jsx'
+import { RoomsPage } from './pages/Rooms/RoomsPage.jsx'
+import { Rooms } from './components/Rooms/Rooms.jsx'
 
 export const routes = [
     {path:'/',element:<WelcomePage/>},
     {path:'/register', element:<RegisterPage/>},
     {path:'/login', element:<LoginPage/>},
+
     {
         path:'/hotels',
         element:<HotelsPage/>,
@@ -22,5 +25,16 @@ export const routes = [
             {path:'deleteHotel/:id', element:<DeleteHotel/>}
         ]
     },
-    {path:'*', element:<NotFoundPage/>}
+
+
+    {
+        path:'/rooms',
+        element: <RoomsPage/>,
+        children:[
+            {path:'addRoom', element:<NewHotel/>},
+            {path:'rooms/:id', element: <Rooms/>},
+        ]
+    },
+    {path:'*', element:<NotFoundPage/>},
+    
 ]
