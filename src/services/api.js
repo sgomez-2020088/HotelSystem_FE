@@ -107,3 +107,14 @@ export const getHotelRoomsRequest = async(id)=>{
         }
     }
 }
+
+export const addHotelRoomRequest = async(hotelRoom)=>{
+    try {
+        return await apiClient.post('/v1/hotelRoom/add',hotelRoom)
+    } catch (err) {
+        return{
+            error:true,
+            err
+        }
+    }
+}
