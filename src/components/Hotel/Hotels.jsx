@@ -13,7 +13,8 @@ const [render, setRender] = useState(true)
 useEffect(() => {
     getHotels()
   }, [])
-  console.log(render)
+
+
   if(isFetching){
     return(
       <div>
@@ -21,13 +22,16 @@ useEffect(() => {
       </div>
     )
   }
-  console.log(hotels)
+
+
   return (
     <div className='hotels-container'>
       {
         hotels.map((hotel)=>(<CardHotel key={hotel._id} name={hotel.name} address={hotel.address} category={hotel.category} 
           amenities={hotel.amenities} image={hotel.hotelImages} handleClick={()=>navigate(`/hotels/updateHotel/${hotel._id}`)} 
-          handleClick2={()=>navigate(`/hotels/deleteHotel/${hotel._id}`)} />))
+          handleClick2={()=>navigate(`/hotels/deleteHotel/${hotel._id}`)}
+          handleClick3={()=>navigate(`/rooms/rooms/${hotel._id}`)}
+          />))
       }
       
     </div>
