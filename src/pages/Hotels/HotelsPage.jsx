@@ -31,6 +31,7 @@ export const HotelsPage = () => {
              <li onClick={()=>{navigate('/hotels/Hotels')}}><Link  ref={ref} className="sidebar-link">Ver hoteles</Link></li>
             <li>< Link  ref={ref} className="sidebar-link">Editar</Link></li>
             <li><Link ref={ref} className="sidebar-link">Eliminar</Link></li>
+          
           </ul>
         </SideBar>
 
