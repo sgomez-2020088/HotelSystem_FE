@@ -22,7 +22,12 @@ export const AddRoom = () => {
         price: undefined,
         description: undefined
     })
+    const disbled = formValidation.number === '' && formValidation.type === '' && formValidation.price === '' && formValidation.description === '' 
 
+    console.log('Number',formValidation.number)
+    console.log('Price',formValidation.price)
+    console.log('Type',formValidation.type)
+    console.log('Description',formValidation.description)
 
     const handleSubmit = (e)=>{
         e.preventDefault()
@@ -31,22 +36,28 @@ export const AddRoom = () => {
 
     const handleChangeNumber = (e)=>{
         const value = e.target.value
+        const regex = /^\d+$/
+        setFormValidation({...formValidation, number: regex.test(value)?'':'Ingrese unicamente numeros enteros'})
         setNumber(value)
     }
 
     const handleChangeType = (e)=>{
         const value = e.target.value
+        setFormValidation({...formValidation, type: value === 'type'?'Eliga un tipo de hotel':''})
         console.log(value)
         setType(value)
     }
 
     const handleChangePrice = (e)=>{
         const value = e.target.value
+        const regex = /^\d+$/
+        setFormValidation({...formValidation, price: regex.test(value)?'':'Ingrese unicamente numeros positivos'})
         setPrice(value)
     }
 
     const handleChangeDescription = (e)=>{
         const value = e.target.value
+        setFormValidation({...formValidation, description: value.length === 0 ?'No puede dejar un campo vacio':''})
         setDescription(value)
     }
 
@@ -55,7 +66,9 @@ export const AddRoom = () => {
         <form onSubmit={handleSubmit}>
         <h1> Nueva habitación</h1>
             <Input field='number' label='Number' value={number} handleValueChange={handleChangeNumber} />
+            <span>{formValidation.number}</span>
             <Input field='price' label='Price' value={price} handleValueChange={handleChangePrice} />
+             <span>{formValidation.price}</span>
            <label> Type</label>
             <select value={type} onChange={handleChangeType}>
                 <option value='type'>Type</option>
@@ -65,10 +78,11 @@ export const AddRoom = () => {
                 <option value='familiar'>Familiar</option>
                 <option value='suite'>Suite</option>
             </select>
-            <br/>
+            <span>{formValidation.type}</span>
             <br/>
             <Input field='decription' label='Decription' value={description} handleValueChange={handleChangeDescription} />
-            <button type='submit' onClick={() =>navigate(`/rooms/rooms/${id}`)}>Enviar</button>
+            <span>{formValidation.description}</span>
+            <button disabled={!disbled}type='submit' onClick={() =>navigate(`/rooms/rooms/${id}`)}>Enviar</button>
         </form>
     </div>
   )
