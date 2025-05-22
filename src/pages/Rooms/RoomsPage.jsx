@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavBar } from '../../components/Navbar/NavBar'
 import { SideBar } from '../../components/SideBar/SideBar'
 import { Link, useNavigate, useParams } from 'react-router-dom'
@@ -9,6 +9,7 @@ import { RoomContent } from '../../components/RoomContent'
 
 export const RoomsPage = () => {
     
+    const [render, setRender] = useState(true)
     let navigate = useNavigate()
     const {id} = useParams()
 
@@ -21,13 +22,11 @@ export const RoomsPage = () => {
         
 
         <div className="container2-plus">
-        <SideBar className="sidePlus">
+        <SideBar className="sidebar">
             <ul>
-            <li onClick={()=>{navigate(`/rooms/addRoom/${id}`)}}><Link>Agregar</Link></li>
-            <li onClick={()=>{navigate()}}><Link>Ver Habitaciones</Link></li>
-            <li><Link >Editar</Link></li>
-            <li><Link>Eliminar</Link></li>
-            
+            <li onClick={()=>{navigate(`/rooms/addRoom/${id}`)}}><Link className="sidebar-link">Agregar</Link></li>
+            <li onClick={()=>{navigate(`/rooms/rooms/${id}`)}}><Link className="sidebar-link">Ver Habitaciones</Link></li>   
+            <li onClick={()=>{navigate(`/hotels/hotels`)}}><Link className="sidebar-link">Ver Hoteles</Link></li>    
             </ul>
         </SideBar>
         <RoomContent/>
