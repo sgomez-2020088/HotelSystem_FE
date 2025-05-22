@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { SideBar } from '../../components/SideBar/SideBar'
 import { NavBar } from '../../components/Navbar/NavBar'
 import { HotelContent } from '../../components/HotelContent'
@@ -13,10 +13,10 @@ export const HotelsPage = () => {
 
   const {hotels, getHotels,isFetching} =useHotels()
 
-
   let ref = useRef()
 
   let navigate = useNavigate()
+
 
   return (
     <>
