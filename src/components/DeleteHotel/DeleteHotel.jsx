@@ -5,7 +5,7 @@ import { useDeleteHotel } from '../../shared/hooks/useDeleteHotel'
 import { ScaleLoader } from 'react-spinners'
 import { Input } from '../Input'
 
-import '../NewHotel/NewHotelCSS.css'
+import './DeleteHotel.css'
 import toast from 'react-hot-toast'
 export const DeleteHotel = () => {
   const {hotel,isFetching, getHotelById} = useHotelById() 
@@ -43,7 +43,7 @@ export const DeleteHotel = () => {
 
   console.log(hotel)
   return (
-    <div className='form-wrapper'>
+    <div className="content-delete">
       <Input field='name'label='Rescriba el nombre del hotel para confirmar su eliminación' type='text' value={name} handleValueChange={handleChangeName}/>
       <button onClick={handleDeleteHotel}>Eliminar</button>
     </div>
