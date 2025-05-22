@@ -44,7 +44,10 @@ export const UpdateHotel = () => {
     )
   }
 
-   const isDisabled = formValidation.newName === '' &&  formValidation.newAddress === ''&& formValidation.newAmenities === ''
+   const isDisabled = formValidation.newName === '' || formValidation.newAddress === ''|| formValidation.newAmenities === ''
+  
+
+   console.log()
 
    const handleSubmit = (event) =>{
     event.preventDefault()
@@ -54,13 +57,13 @@ export const UpdateHotel = () => {
 
   const handleChangeName=(e) =>{
     const value = e.target.value
-    setFormValidation({...setFormValidation, newName: value.length === 0?'No debe dejar un campos vacios':''})
+    setFormValidation({...formValidation, newName: value.length === 0?'No debe dejar un campos vacios':''})
     setNewName(value)
   }
 
   const handleChangeAddress = (e)=>{
     const value = e.target.value
-    setFormValidation({...setFormValidation, newAddress: value.length === 0?'No debe dejar un campos vacios':''})
+    setFormValidation({...formValidation, newAddress: value.length === 0?'No debe dejar un campos vacios':''})
     setNewAddress(value)
   }
 
@@ -70,7 +73,7 @@ export const UpdateHotel = () => {
   }
   const handleChangeAmenities = (e)=>{
     const value = e.target.value
-    setFormValidation({...setFormValidation, newAmenities: value.length === 0?'No debe dejar un campos vacios':''})
+    setFormValidation({...formValidation, newAmenities: value.length === 0?'No debe dejar un campos vacios':''})
     setNewAmenities(value)
   }
   
@@ -99,7 +102,7 @@ export const UpdateHotel = () => {
             <br/>
             <Input field='amenities' label='Amenities' type="text" value={newAmenities} handleValueChange={handleChangeAmenities}/>
             <span>{formValidation.newAmenities}</span>
-          <button disabled={isDisabled}>Guardar</button>
+          <button disabled={!isDisabled}>Guardar</button>
         </form>
       </div>
   )
