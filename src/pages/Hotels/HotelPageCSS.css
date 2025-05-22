@@ -16,13 +16,6 @@
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-
-.main-layout {
-  display: flex;
-  height: calc(100vh - 60px);
-  background-color: #FDF0F0; 
-}
-
 .sidebar ul {
   list-style: none;
   padding: 0;
@@ -47,4 +40,10 @@
 .sidebar-link:hover {
   background-color: #A8D5BA;
   color: #003366;
+}
+
+.main-layout {
+  display: flex;
+  height: 100vh;
+
 }
