@@ -54,7 +54,7 @@ export const NewHotel = () => {
       <p>Guarda tu nuevo hotel</p>
       <Input field='name' label='Name' type="text" value={name} handleValueChange={handleChangeName}/>
       <Input field='address ' label='Address'type="text" value={address} handleValueChange={handleChangeAdrees}/>
-      <label>Categoroy</label>
+      <label>Category</label>
       <select onChange={handleChangeCategory} value={category}>
         <option value='Category'>Category</option>
         <option value='Hotel'>Hotel</option>
