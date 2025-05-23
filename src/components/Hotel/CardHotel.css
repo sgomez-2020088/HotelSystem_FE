@@ -1,35 +1,58 @@
 .card-hotel {
-  background-color: #FFFFFF;
+  flex: 0 0 320px;
+  min-height: 350px;
+  background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   padding: 20px;
-  max-width: 350px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start; 
   transition: transform 0.3s ease;
   border-left: 6px solid #A8D5BA;
   color: #003366;
+  overflow: hidden;
+  box-sizing: border-box;
+  justify-content: flex-start; 
 }
 
-.card-hotel:hover {
-  transform: translateY(-5px);
+
+.hotel-amenities {
+  margin: 10px 0 8px 0; 
+  text-align: left;
+  white-space: normal;  
+  overflow: visible;
+  font-style: normal;
+  font-weight: normal;
+  max-width: 100%;
+  padding-bottom: 1rem;
+}
+
+.hotel-address{
+  padding: 0.3rem; 
+  text-align: left;
+  white-space: normal; 
+  overflow: visible;
+  font-style: normal;
+  
+  font-size: 0.9rem;
+}
+
+.hotel-category{
+  padding: 0.23rem;
+  text-align: left;
+  white-space: normal; 
+  overflow: visible;
+  font-style: normal;
+  color: #003366;
+  font-size: 0.9rem;
+  font-style: italic
 }
 
 .hotel-name {
   font-size: 1.6rem;
-  font-weight: 700;
+  font-weight: 700; 
   margin-bottom: 10px;
-  text-align: center;
-}
-
-.hotel-address,
-.hotel-category,
-.hotel-amenities {
-  font-size: 1rem;
-  margin: 5px 0;
-  color: #333333;
-  text-align: center;
 }
 
 .card-hotel img {
@@ -39,12 +62,6 @@
   border-radius: 8px;
   margin: 15px 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.card-hotel p {
-  font-style: italic;
-  color: #A8D5BA;
-  margin: 15px 0;
 }
 
 .card-hotel button {

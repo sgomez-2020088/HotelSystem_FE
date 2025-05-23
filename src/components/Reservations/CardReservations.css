@@ -1,20 +1,19 @@
-/* Contenedor para las cards: 3 columnas, con espacio */
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
-  gap: 1.5rem; /* espacio entre cards */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 1.5rem; 
   padding: 1rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Cards reservaciones */
+
 .card-reservations {
-  border: 1px solid #F0F0F0; /* Color claro para borde */
-  padding: 1.5rem; /* tamaño un poco más grande */
+  border: 1px solid #F0F0F0; 
+  padding: 1.5rem; 
   border-radius: 12px;
-  max-width: 100%; /* ocupar toda la columna */
-  background-color: #FFFFFF; /* Blanco */
+  max-width: 100%; 
+  background-color: #FFFFFF; 
   font-family: Arial, sans-serif;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -23,20 +22,20 @@
 
 .card-reservations:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0, 51, 102, 0.3); /* azul oscuro #003366 con opacidad */
+  box-shadow: 0 12px 24px rgba(0, 51, 102, 0.3); 
 }
 
 .card-reservations__hotel {
-  font-size: 1.6rem; /* un poco más grande */
+  font-size: 1.6rem; 
   margin-bottom: 0.5rem;
-  color: #003366; /* azul oscuro */
+  color: #003366; 
   font-weight: bold;
 }
 
 .card-reservations__room {
-  font-size: 1.2rem; /* un poco más grande */
+  font-size: 1.2rem; 
   margin-bottom: 0.5rem;
-  color: #333333; /* gris oscuro */
+  color: #333333; 
 }
 
 .card-reservations__dates p {
@@ -47,7 +46,7 @@
 
 .card-reservations__services {
   margin: 0.5rem 0;
-  color: #003366; /* azul oscuro */
+  color: #003366; 
 }
 
 .card-reservations__service-item {
@@ -60,9 +59,9 @@
 .card-reservations__total {
   margin-top: 1rem;
   font-size: 1.3rem;
-  color: #A8D5BA; /* verde pastel */
+  color: #A8D5BA; 
   font-weight: bold;
-  border-top: 1px solid #F7E9D7; /* beige claro */
+  border-top: 1px solid #F7E9D7; 
   padding-top: 0.5rem;
 }
 
@@ -88,7 +87,7 @@
   background-color: #0055a5;
 }
 
-/* Estilo para el evento del calendario */
+
 .fc-event.reservation-event {
   background-color: #A8D5BA !important;
   border-color: #8BCBA8 !important;
@@ -97,28 +96,28 @@
   border-radius: 4px !important;
 }
 
-/* Contenedor general */
+
 .fc {
   font-family: Arial, sans-serif;
   max-width: 700px;
   margin: 0 auto;
-  font-size: 14px; /* tamaño base */
-  color: #333333; /* gris oscuro */
+  font-size: 14px; 
+  color: #333333; 
 }
 
-/* Título mes y año */
+
 .fc .fc-toolbar-title {
-  font-size: 1.2rem; /* tamaño moderado */
+  font-size: 1.2rem; 
   font-weight: 700;
-  color: #003366; /* azul oscuro */
+  color: #003366;
   text-transform: uppercase;
 }
 
-/* Botones (today, prev, next) */
+
 .fc .fc-button {
-  background-color: #A8D5BA; /* verde pastel */
+  background-color: #A8D5BA; 
   border: none;
-  color: #003366; /* azul oscuro */
+  color: #003366; 
   font-weight: 600;
   padding: 0.4rem 0.8rem;
   border-radius: 6px;
@@ -190,4 +189,29 @@
   .cards-container {
     grid-template-columns: 1fr;
   }
+}
+
+.calendarButton {
+  background-color: #005f73;       
+  color: #e0fbfc;                  
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0, 95, 115, 0.3);
+  user-select: none;
+}
+
+.calendarButton:hover {
+  background-color: #0a9396;       
+  box-shadow: 0 4px 12px rgba(10, 147, 150, 0.5);
+}
+
+.calendarButton:active {
+  background-color: #94d2bd;      
+  box-shadow: none;
+  transform: scale(0.98);
 }

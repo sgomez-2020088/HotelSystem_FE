@@ -15,9 +15,9 @@ body, html {
 }
 
 .form-container {
-  width: 500px; /* o el tamaño que quieras */
+  width: 500px; 
   max-width: 200%;
-  max-width: 600vw; /* para que no se salga en pantallas chicas */
+  max-width: 600vw; 
   background-color: white;
   padding: 50px;
   border-radius: 15px;
@@ -43,7 +43,7 @@ select {
 }
 
 select:focus {
-  border-color: #3b82f6; /* azul más fuerte al enfocar */
+  border-color: #3b82f6;
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
   outline: none;
 }

@@ -3,7 +3,7 @@
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 2rem;
     padding: 2rem;
-    background-color: #F0F0F0; /* fondo claro */
+    background-color: #F0F0F0;
 
     margin-left: 12rem; 
 
@@ -71,3 +71,27 @@
     padding: 4px 8px;
     border-radius: 5px;
     }
+
+    .botoncitoLindo {
+  background-color: #003366;     
+  color: #F7E9D7;                
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 51, 102, 0.3);
+  width: 100%;                 
+  max-width: 280px;            
+  display: block;
+  margin: 0 auto;              
+}
+
+.botoncitoLindo:hover {
+  background-color: #A8D5BA;    
+  color: #003366;               
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(168, 213, 186, 0.5);
+}

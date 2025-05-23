@@ -13,7 +13,7 @@ export const CardRoom = ({ number, type, price, description, hotel, handleClick 
             <p className="room-price">Precio: Q{price}</p>
             <p className="room-hotel">Hotel: {hotel}</p>
         </div>
-            <button onClick={handleClick}>Rersver</button>
+            <button className="botoncitoLindo" onClick={handleClick}>Reserve</button>
         </div>
     )
 }

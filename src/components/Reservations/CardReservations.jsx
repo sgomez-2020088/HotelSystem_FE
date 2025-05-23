@@ -33,7 +33,7 @@ export const CardReservations = ({hotel, hotelRoom, checkIn, checkOut, services,
       <div className="card-reservations__services">
         <strong>Servicios:{services}</strong>
       </div>
-      <button onClick={handleClikcCalendar}>
+      <button className='calendarButton' onClick={handleClikcCalendar}>
         {showCalendar ? 'Ocultar Calendario' : 'Mostrar Calendario'}
       </button>
 
