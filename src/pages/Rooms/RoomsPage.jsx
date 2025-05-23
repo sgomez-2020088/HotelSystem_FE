@@ -26,7 +26,8 @@ export const RoomsPage = () => {
             <ul>
             <li onClick={()=>{navigate(`/rooms/addRoom/${id}`)}}><Link className="sidebar-link">Agregar</Link></li>
             <li onClick={()=>{navigate(`/rooms/rooms/${id}`)}}><Link className="sidebar-link">Ver Habitaciones</Link></li>   
-            <li onClick={()=>{navigate(`/hotels/hotels`)}}><Link className="sidebar-link">Ver Hoteles</Link></li>    
+            <li onClick={()=>{navigate(`/hotels/hotels`)}}><Link className="sidebar-link">Ver Hoteles</Link></li>   
+               
             </ul>
         </SideBar>
         <RoomContent/>
