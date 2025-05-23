@@ -10,6 +10,7 @@ let navigate = useNavigate()
 const {hotels,getHotels,isFetching}=useHotels()
 const [render, setRender] = useState(true)
 
+  const role = localStorage.getItem('role')
 useEffect(() => {
     getHotels()
   }, [])
