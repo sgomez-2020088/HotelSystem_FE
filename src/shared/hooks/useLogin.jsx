@@ -37,8 +37,8 @@ export const useLogin = () => {
                     'Error general al intentar registrar al usuario. Intenta de nuevo'
                 )
             }
-            console.log(response.token)
 
+            localStorage.setItem('userId', response.loggedUser.uid )
             localStorage.setItem('token',response.token)
             setError(false)         
             navigate('/hotels/Hotels')
@@ -50,6 +50,6 @@ export const useLogin = () => {
         loading,
         error,
         setError,
-        setLoading,
+        setLoading
     }
 }
