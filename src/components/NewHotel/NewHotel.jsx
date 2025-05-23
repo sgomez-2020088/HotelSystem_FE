@@ -8,10 +8,17 @@ export const NewHotel = () => {
   const [address, setAddress] = useState('')
   const [category, setCategory] = useState('')
   const [amenities, setAmenities] = useState('')
-  //const [hotelImage, setHotelImage] = useState(null)
+
+  const [formValidation, setFormValidarion] = useState({
+    name:undefined,
+    address: undefined,
+    category: undefined,
+    amenities: undefined
+  })
 
   const { addHotel } = useAddHotel()
 
+  const isDisabled = formValidation.name === ''&& formValidation.category === ''&& formValidation.address === ''&& formValidation.amenities === ''
   const handleSubmit = (event) =>{
     event.preventDefault()
     addHotel(name, address, category, amenities)
@@ -19,33 +26,30 @@ export const NewHotel = () => {
 
   const handleChangeName = (event) => {
     const value = event.target.value
-
+    setFormValidarion({...formValidation, name: value.length === 0?'No puedes dejar campos vacios':''})
     setName(value)
   }
 
   const handleChangeAdrees = (event) => {
     const value = event.target.value
-
+     setFormValidarion({...formValidation, address: value.length === 0?'No puedes dejar campos vacios':''})
     setAddress(value)
   }
 
   const handleChangeCategory = (event) => {
     const value = event.target.value
+     setFormValidarion({...formValidation, category: value === 'Category'?'No puedes dejar campos vacios':''})
     console.log(value)
     setCategory(value)
   }
 
   const handleChangeAmenities = (event) => {
     const value = event.target.value
-    
+    setFormValidarion({...formValidation, amenities: value.length === 0?'No puedes dejar campos vacios':''})
     setAmenities(value)
   }
 
-   /*const handleChangeImageHotel = (event) => {
-    const file = event.target.files[0]
-    console.log(file)
-    setHotelImage(file)
-  }*/
+   
   
   return (
   <div className="form-wrapper">
@@ -53,7 +57,9 @@ export const NewHotel = () => {
       <h1>Nuevo hotel</h1>
       <p>Guarda tu nuevo hotel</p>
       <Input field='name' label='Name' type="text" value={name} handleValueChange={handleChangeName}/>
+      <span>{formValidation.name}</span>
       <Input field='address ' label='Address'type="text" value={address} handleValueChange={handleChangeAdrees}/>
+      <span>{formValidation.address}</span>
       <label>Category</label>
       <select onChange={handleChangeCategory} value={category}>
         <option value='Category'>Category</option>
@@ -67,13 +73,11 @@ export const NewHotel = () => {
         <option value='HotelMontana'>Hotel de Montaña</option>
         <option value='HotelEcologico'>Hotel Ecologico</option>
       </select>
-      <br/>
+      <span>{formValidation.category}</span>
       <br/>
       <Input field='amenities' label='Amenities' type="text" value={amenities} handleValueChange={handleChangeAmenities}/>
-      
-      {/*<Input type="file" label="Agregar imagen"   accept="image/png, image/jpg',image/webp,image/jpeg" 
-        handleValueChange={handleChangeImageHotel}/>*/}
-      <button>Guardar</button>
+      <span>{formValidation.amenities}</span>
+      <button type='submit' disabled={!isDisabled}>Guardar</button>
     </form>
   </div>
 )
