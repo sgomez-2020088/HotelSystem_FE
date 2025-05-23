@@ -7,16 +7,18 @@ import { Link, useNavigate } from 'react-router-dom'
 import './HotelPageCss.css'
 
 import { useHotels } from '../../shared/hooks/useHotels'
+import { useLogin } from '../../shared/hooks/useLogin'
 
 
 export const HotelsPage = () => {
 
   const {hotels, getHotels,isFetching} =useHotels()
-
+  const {user}=useLogin()
+  const userid = localStorage.getItem('userId')
   let ref = useRef()
 
   let navigate = useNavigate()
-
+  console.log(userid)
 
   return (
     <>
