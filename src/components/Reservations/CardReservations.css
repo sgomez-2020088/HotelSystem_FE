@@ -1,0 +1,193 @@
+/* Contenedor para las cards: 3 columnas, con espacio */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+  gap: 1.5rem; /* espacio entre cards */
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Cards reservaciones */
+.card-reservations {
+  border: 1px solid #F0F0F0; /* Color claro para borde */
+  padding: 1.5rem; /* tamaño un poco más grande */
+  border-radius: 12px;
+  max-width: 100%; /* ocupar toda la columna */
+  background-color: #FFFFFF; /* Blanco */
+  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card-reservations:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 51, 102, 0.3); /* azul oscuro #003366 con opacidad */
+}
+
+.card-reservations__hotel {
+  font-size: 1.6rem; /* un poco más grande */
+  margin-bottom: 0.5rem;
+  color: #003366; /* azul oscuro */
+  font-weight: bold;
+}
+
+.card-reservations__room {
+  font-size: 1.2rem; /* un poco más grande */
+  margin-bottom: 0.5rem;
+  color: #333333; /* gris oscuro */
+}
+
+.card-reservations__dates p {
+  margin: 0.2rem 0;
+  font-size: 1rem;
+  color: #333333;
+}
+
+.card-reservations__services {
+  margin: 0.5rem 0;
+  color: #003366; /* azul oscuro */
+}
+
+.card-reservations__service-item {
+  font-size: 0.95rem;
+  color: #333333;
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+
+.card-reservations__total {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  color: #A8D5BA; /* verde pastel */
+  font-weight: bold;
+  border-top: 1px solid #F7E9D7; /* beige claro */
+  padding-top: 0.5rem;
+}
+
+.card-reservations.expanded {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
+  z-index: 10;
+}
+
+.btn-toggle {
+  padding: 0.5rem 1rem;
+  background-color: #003366;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  margin: 0.5rem 0 1rem 0;
+  transition: background-color 0.3s ease;
+}
+
+.btn-toggle:hover {
+  background-color: #0055a5;
+}
+
+/* Estilo para el evento del calendario */
+.fc-event.reservation-event {
+  background-color: #A8D5BA !important;
+  border-color: #8BCBA8 !important;
+  color: #003366 !important;
+  font-weight: bold !important;
+  border-radius: 4px !important;
+}
+
+/* Contenedor general */
+.fc {
+  font-family: Arial, sans-serif;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 14px; /* tamaño base */
+  color: #333333; /* gris oscuro */
+}
+
+/* Título mes y año */
+.fc .fc-toolbar-title {
+  font-size: 1.2rem; /* tamaño moderado */
+  font-weight: 700;
+  color: #003366; /* azul oscuro */
+  text-transform: uppercase;
+}
+
+/* Botones (today, prev, next) */
+.fc .fc-button {
+  background-color: #A8D5BA; /* verde pastel */
+  border: none;
+  color: #003366; /* azul oscuro */
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  margin: 0 0.2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.fc .fc-button:hover {
+  background-color: #90cba0; 
+  color: #001f33; 
+}
+
+
+.fc .fc-button.fc-button-active {
+  background-color: #003366; 
+  color: #F7E9D7; 
+}
+
+.fc .fc-scrollgrid {
+  border: none;
+}
+
+
+.fc .fc-daygrid-day {
+  padding: 0.3rem;
+  min-height: 60px;
+}
+
+.fc .fc-daygrid-day-number {
+  font-weight: 600;
+  color: #003366; 
+  font-size: 0.95rem;
+}
+
+
+.fc .fc-col-header-cell-cushion {
+  font-weight: 700;
+  color: #333333;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+
+.fc .fc-scroller {
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.fc-event {
+  background-color: #A8D5BA !important;
+  border: none !important;
+  color: #003366 !important;
+  font-weight: 700 !important;
+  border-radius: 6px !important;
+  padding: 2px 6px !important;
+  font-size: 0.9rem !important;
+}
+
+
+@media (max-width: 900px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+}
