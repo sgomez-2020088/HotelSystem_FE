@@ -10,6 +10,9 @@ import { DeleteHotel } from './components/DeleteHotel/DeleteHoteL.jsx'
 import { RoomsPage } from './pages/Rooms/RoomsPage.jsx'
 import { Rooms } from './components/Rooms/Rooms.jsx'
 import { AddRoom } from './components/AddRoom/AddRoom.jsx'
+import { Reservation } from './components/Reservations/Reservation.jsx'
+import { ReservationPage } from './pages/Reservation/ReservationPage.jsx'
+import { AddReservation } from './components/AddReservation/AddReservation.jsx'
 
 export const routes = [
     {path:'/',element:<WelcomePage/>},
@@ -34,6 +37,15 @@ export const routes = [
         children:[
             {path:'addRoom/:id', element:<AddRoom/>},
             {path:'rooms/:id', element: <Rooms/>},
+        ]
+    },
+
+    {
+        path:'/reservation',
+        element:<ReservationPage/>,
+        children:[
+            {path: 'myReservations/:idhotel', element:<Reservation/>},
+            {path: 'addReservation/:id/:idhotel', element:<AddReservation/>}
         ]
     },
     {path:'*', element:<NotFoundPage/>},
