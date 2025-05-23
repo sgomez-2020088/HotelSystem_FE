@@ -14,11 +14,10 @@ export const HotelsPage = () => {
 
   const {hotels, getHotels,isFetching} =useHotels()
   const {user}=useLogin()
-  const userid = localStorage.getItem('userId')
+  const role = localStorage.getItem('role')
   let ref = useRef()
 
   let navigate = useNavigate()
-  console.log(userid)
 
   return (
     <>
@@ -29,7 +28,7 @@ export const HotelsPage = () => {
       <div className="main-layout">
         <SideBar className="sidebar">
           <ul>
-            <li onClick={()=>{navigate('/hotels/addHotel')}}><Link  ref={ref}className="sidebar-link">Agregar</Link></li>
+            {role == 'ADMIN'?<li onClick={()=>{navigate('/hotels/addHotel')}}><Link  ref={ref}className="sidebar-link">Agregar</Link></li>:''}
              <li onClick={()=>{navigate('/hotels/Hotels')}}><Link  ref={ref} className="sidebar-link">Ver hoteles</Link></li>
            
           

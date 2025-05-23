@@ -13,6 +13,7 @@ export const RoomsPage = () => {
     let navigate = useNavigate()
     const {id} = useParams()
 
+    const role = localStorage.getItem('role')
 
     return (
         <>
@@ -24,9 +25,10 @@ export const RoomsPage = () => {
         <div className="container2-plus">
         <SideBar className="sidebar">
             <ul>
-            <li onClick={()=>{navigate(`/rooms/addRoom/${id}`)}}><Link className="sidebar-link">Agregar</Link></li>
-            <li onClick={()=>{navigate(`/rooms/rooms/${id}`)}}><Link className="sidebar-link">Ver Habitaciones</Link></li>   
+            {role === 'ADMIN'?<li onClick={()=>{navigate(`/rooms/addRoom/${id}`)}}><Link className="sidebar-link">Agregar</Link></li>:''}
+             {role === 'ADMIN'?<li onClick={()=>{navigate(`/rooms/rooms/${id}`)}}><Link className="sidebar-link">Ver Habitaciones</Link></li>:''} 
             <li onClick={()=>{navigate(`/hotels/hotels`)}}><Link className="sidebar-link">Ver Hoteles</Link></li>   
+             <li onClick={()=>{navigate(`/reservation/myReservations/${id}`)}}><Link className="sidebar-link">Ver mis reservaciones</Link></li>   
                
             </ul>
         </SideBar>
