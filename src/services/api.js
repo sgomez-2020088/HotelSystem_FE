@@ -118,3 +118,26 @@ export const addHotelRoomRequest = async(hotelRoom)=>{
         }
     }
 }
+
+export const addReservationRequest = async(reservation)=>{
+    try {
+        return await apiClient.post('/v1/reservation/reservate', reservation)
+    } catch (err) {
+        return{
+            error:true,
+            err
+        }
+        
+    }
+}
+
+export const getMyReservation = async(id)=>{
+    try {
+        return await apiClient.get('/v1/reservation/myReservations', id)
+    } catch (err) {
+        return{
+            error:true,
+            err
+        }
+    }
+}
