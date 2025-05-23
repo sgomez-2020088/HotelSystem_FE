@@ -28,7 +28,7 @@ useEffect(() => {
             {
                 room.map((room)=>(<CardRoom key={room._id} number={room.number} type={room.type} 
                     price={room.price} description={room.description} hotel={room.hotel.name}
-                
+                    handleClick={()=>navigate(`/reservation/addReservation/${room._id}/${room.hotel._id}`)}
                 />))
             }
             
