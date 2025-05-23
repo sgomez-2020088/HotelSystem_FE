@@ -1,7 +1,7 @@
 import React from 'react'
 import './CardRoom.css'
 
-export const CardRoom = ({ number, type, price, description, hotel }) => {
+export const CardRoom = ({ number, type, price, description, hotel, handleClick }) => {
     return (
         <div className="card-room">
         <div className="card-room-header">
@@ -13,6 +13,7 @@ export const CardRoom = ({ number, type, price, description, hotel }) => {
             <p className="room-price">Precio: Q{price}</p>
             <p className="room-hotel">Hotel: {hotel}</p>
         </div>
+            <button onClick={handleClick}>Rersver</button>
         </div>
     )
 }
