@@ -20,7 +20,7 @@ export const CardHotel = ({name, address, category,amenities, image, handleClick
       <p className="hotel-amenities">Amenidades: {amenities}</p>
     
       <button onClick={handleClick}>Actualizar</button>
-      <button onClick={handleClick2}>Eliminar</button>
+      <button className="delete" onClick={handleClick2}>Eliminar</button>
       <button onClick={handleClick3}> Habitaciones </button>
     </div>
   )
