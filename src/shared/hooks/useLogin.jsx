@@ -34,12 +34,14 @@ export const useLogin = () => {
                 return toast.error(
                     response?.err?.response?.data?.msg ||
                     response?.err?.data?.msg ||
-                    'Error general al intentar registrar al usuario. Intenta de nuevo'
+                    'Error general al intentar logearse. Intenta de nuevo'
                 )
             }
 
             localStorage.setItem('userId', response.loggedUser.uid )
+            localStorage.setItem('role', response.loggedUser.role)
             localStorage.setItem('token',response.token)
+
             setError(false)         
             navigate('/hotels/Hotels')
             return toast.success('Login exitoso')
