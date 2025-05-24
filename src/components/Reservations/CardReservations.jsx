@@ -20,15 +20,18 @@ export const CardReservations = ({hotel, hotelRoom, checkIn, checkOut, services,
   const handleClikcCalendar = () => {
     setShowCalendar(!showCalendar)
   }
+  console.log(dayjs(checkIn).format('YYYY-MM-DD'))
 
+  const dateIn =  dayjs(checkIn).format('YYYY-MM-DD')
+  const dateOut = dayjs(checkOut).format('YYYY-MM-DD')
    return (
     <div className="card-reservations">
       <h2 className="card-reservations__hotel">Hotel: {hotel}</h2>
       <p className="card-reservations__room">Habitación: {hotelRoom}</p>
       <p className="card-reservations__room">Tipo de habitación: {type}</p>
       <div className="card-reservations__dates">
-        <p><strong>Check-in:</strong> {checkIn}</p>
-        <p><strong>Check-out:</strong> {checkOut}</p>
+        <p><strong>Check-in:</strong> {dateIn}</p>
+        <p><strong>Check-out:</strong> {dateOut}</p>
       </div>
       <div className="card-reservations__services">
         <strong>Servicios:{services}</strong>

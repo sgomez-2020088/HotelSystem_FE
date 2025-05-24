@@ -19,6 +19,7 @@ export const RoomsPage = () => {
         <>
         <NavBar className="navbar2">
                 <h1>Habitaciones</h1>
+                <button className='botonOut' onClick={()=>(navigate('/'))}> Log Out </button>
         </NavBar>
         
 

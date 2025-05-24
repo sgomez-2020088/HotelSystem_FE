@@ -13,13 +13,14 @@ export const ReservationPage = () => {
     <>  
         <NavBar className="navbar2"> 
             <h1>Reservation</h1>
+            <button className='botonOut' onClick={()=>(navigate('/'))}> Log Out </button>
         </NavBar>
 
         <div className='container2-plus'>
             <SideBar>
-                 <ul>
+                <ul>
                       <li onClick={()=>{navigate(`/reservation/myReservations/${idhotel}`)}}><Link className="sidebar-link">Ver mis reservaciones</Link></li>   
-                     <li onClick={()=>{navigate(`/rooms/rooms/${idhotel}`)}}><Link className="sidebar-link">Ver habitaciones</Link></li>   
+                    <li onClick={()=>{navigate(`/rooms/rooms/${idhotel}`)}}><Link className="sidebar-link">Ver habitaciones</Link></li>   
                 </ul>
             </SideBar>
         </div>

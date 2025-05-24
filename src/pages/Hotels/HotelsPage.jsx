@@ -23,14 +23,15 @@ export const HotelsPage = () => {
     <>
       <NavBar className="navbar">
         <h1>Hoteles</h1>
+        <button className='botonOut' onClick={()=>(navigate('/'))}> Log Out </button>
       </NavBar>
 
       <div className="main-layout">
         <SideBar className="sidebar">
           <ul>
             {role == 'ADMIN'?<li onClick={()=>{navigate('/hotels/addHotel')}}><Link  ref={ref}className="sidebar-link">Agregar</Link></li>:''}
-             <li onClick={()=>{navigate('/hotels/Hotels')}}><Link  ref={ref} className="sidebar-link">Ver hoteles</Link></li>
-           
+            <li onClick={()=>{navigate('/hotels/Hotels')}}><Link  ref={ref} className="sidebar-link">Ver hoteles</Link></li>
+          
           
           </ul>
         </SideBar>
